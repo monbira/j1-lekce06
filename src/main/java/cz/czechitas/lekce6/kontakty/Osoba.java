@@ -53,17 +53,18 @@ public class Osoba {
         boolean eliska = jeNaSeznamuDite("Eliška");
         System.out.printf("Eliška je na seznamu dětí: %b", eliska).println();
 
-        int edita = kolikataJe("Edita");
+        int edita = kolikateJe("Edita");
         System.out.printf("Edita je na seznamu dětí %d. v pořadí.", edita).println();
 
-        int ema = kolikataJe("Ema");
+        int ema = kolikateJe("Ema");
         System.out.printf("Ema je na seznamu dětí %d. v pořadí.", ema).println();
 
         vypisDeti();
     }
 
+    //region Metody k implementaci.
     /**
-     * Přidá uveden ý e-mail do seznamu e-mailů.
+     * Přidá uvedený e-mail do seznamu e-mailů.
      * @param email
      */
     private void pridejEmail(String email) {
@@ -131,6 +132,19 @@ public class Osoba {
     }
 
     /**
+     * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
+     *
+     * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací -1.
+     *
+     * @param jmeno Křestní jméno hledaného dítěte.
+     * @return Pořadí dítěte.
+     */
+    private int kolikateJe(String jmeno) {
+        //TODO
+        return 0;
+    }
+
+    /**
      * Vypíše jména všech dětí na standardní výstup.
      *
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
@@ -141,21 +155,10 @@ public class Osoba {
         //Pro průchod celým seznamem se použije for each cyklus (s dvojtečkou) – po zadání "deti.for" IntelliJ Ieda napoví.
         //Pozor, nejde o metodu forEach()!
     }
+    //endregion
 
 
-    /**
-     * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
-     *
-     * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací -1.
-     *
-     * @param jmeno Křestní jméno hledaného dítěte.
-     * @return Pořadí dítěte.
-     */
-    private int kolikataJe(String jmeno) {
-        //TODO
-        return 0;
-    }
-
+    //region Implementace osoby.
     public String getJmeno() {
         return jmeno;
     }
@@ -188,4 +191,19 @@ public class Osoba {
     public String toString() {
         return jmeno + ' ' + prijmeni;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Osoba)) return false;
+        Osoba osoba = (Osoba) o;
+        return jmeno.equals(osoba.jmeno) && prijmeni.equals(osoba.prijmeni) && emaily.equals(osoba.emaily) && telefony.equals(osoba.telefony) && deti.equals(osoba.deti);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(jmeno, prijmeni, emaily, telefony, deti);
+    }
+
+    //endregion
 }
