@@ -50,14 +50,22 @@ public class Osoba {
         pridejDite("Ester");
         System.out.printf("Děti: %s", String.join(", ", deti)).println();
 
-        boolean eliska = jeNaSeznamuDite("Eliška");
-        System.out.printf("Eliška je na seznamu dětí: %b", eliska).println();
+        boolean eliskaJe = jeNaSeznamuDite("Eliška");
+        System.out.printf("Eliška je na seznamu dětí: %b", eliskaJe).println();
 
-        int edita = kolikateJe("Edita");
-        System.out.printf("Edita je na seznamu dětí %d. v pořadí.", edita).println();
+        Integer editaPoradi = kolikateJe("Edita");
+        if (editaPoradi == null) {
+            System.out.println("Edita není na seznamu dětí.");
+        } else {
+            System.out.printf("Edita je na seznamu dětí %d. v pořadí.", editaPoradi).println();
+        }
 
-        int ema = kolikateJe("Ema");
-        System.out.printf("Ema je na seznamu dětí %d. v pořadí.", ema).println();
+        Integer emaPoradi = kolikateJe("Ema");
+        if (emaPoradi == null) {
+            System.out.println("Ema není na seznamu dětí.");
+        } else {
+            System.out.printf("Ema je na seznamu dětí %d. v pořadí.", emaPoradi).println();
+        }
 
         vypisDeti();
     }
