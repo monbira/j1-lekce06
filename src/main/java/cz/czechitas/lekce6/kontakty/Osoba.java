@@ -134,12 +134,12 @@ public class Osoba {
     /**
      * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
      *
-     * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací -1.
+     * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací {@code null}.
      *
      * @param jmeno Křestní jméno hledaného dítěte.
      * @return Pořadí dítěte.
      */
-    private int kolikateJe(String jmeno) {
+    private Integer kolikateJe(String jmeno) {
         //TODO
         return 0;
     }
