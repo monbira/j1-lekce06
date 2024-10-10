@@ -158,7 +158,9 @@ public class Osoba {
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
      */
     private void vypisDeti() {
-        //TODO bonusový úkol
+        for (String dite : deti) {
+            System.out.println(dite);
+        }
         //Pro výpis jednoho dítěte se použije System.out.println()
         //Pro průchod celým seznamem se použije for each cyklus (s dvojtečkou) – po zadání "deti.for" IntelliJ Ieda napoví.
         //Pozor, nejde o metodu forEach()!
